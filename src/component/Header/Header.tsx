@@ -21,7 +21,7 @@ export default function Header({
   incQty,
   decQty,
 }: IHeaderProps) {
-  const [isActive, setIsActive] = useState(false);
+  const [isActive, setIsActive] = useState(true);
 
   const toNumber = (v: number | string): number => {
     if (typeof v === "number") return v;
