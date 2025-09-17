@@ -21,7 +21,7 @@ export default function Header({
   incQty,
   decQty,
 }: IHeaderProps) {
-  const [isActive, setIsActive] = useState(true);
+  const [isActive, setIsActive] = useState(false);
 
   const toNumber = (v: number | string): number => {
     if (typeof v === "number") return v;
@@ -98,7 +98,7 @@ export default function Header({
 
                   <div
                     className={`${styles.content} ${
-                      isActive ? styles.active : ""
+                      isActive ? ""  : styles.active
                     }`}
                   >
                     <ul>
