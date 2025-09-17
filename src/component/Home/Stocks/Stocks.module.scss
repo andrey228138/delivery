@@ -1,0 +1,62 @@
+.stocks {
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 47px;
+    align-items: center;
+    margin-top: 64px;
+    h2 {
+      gap: 15px;
+      font-weight: 800;
+
+      font-size: 44px;
+
+      line-height: 100%;
+      letter-spacing: 0%;
+      color: black;
+      span {
+        color: #f7d22d;
+      }
+    }
+    div {
+      display: flex;
+      align-items: center;
+      gap: 29px;
+
+      .left {
+        img {
+          object-fit: cover;
+          width: 100%;
+          max-width: 541px;
+          height: 405px;
+          border-radius: 20px;
+        }
+      }
+      ul {
+        display: grid;
+        grid-template-columns: repeat(2, 0fr);
+        gap: 29px;
+        img {
+          object-fit: cover;
+          width: 256px;
+
+          border-radius: 20px;
+          height: 189px;
+        }
+      }
+    }
+    button {
+      background-color: #f7d22d;
+      color: white;
+      padding: 10px 40px;
+      border: none;
+      border-radius: 23px;
+
+      font-weight: 700;
+      font-size: 14px;
+
+      line-height: 28px;
+      letter-spacing: 0%;
+    }
+  }
+}
