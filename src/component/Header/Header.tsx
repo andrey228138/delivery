@@ -3,7 +3,7 @@ import styles from "./Header.module.scss";
 import Logo from "../../img/logo.svg";
 import Yandex from "../../img/yandex.png";
 import Star from "../../img/star.svg";
-import Close from "../../img/Close.svg";
+import Close from "../../img/close.svg";
 import type { IBasket } from "../../types";
 
 interface IHeaderProps {
