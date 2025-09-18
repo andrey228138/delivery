@@ -18,7 +18,7 @@ export default function Food_render({
   setBasketFood,
 }: FoodRenderProps) {
   const [data, SetData] = useState<Product[]>([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     setIsLoading(false);
