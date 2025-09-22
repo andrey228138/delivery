@@ -18,40 +18,42 @@ export default function Footer() {
         <div className="container">
           <div className={styles.wrapper}>
             <div className={styles.left}>
-              <img src={logo} alt="" />
+              <img src={logo} alt="" className={styles.logo}/>
               <div>
-                <p>Калорийность и состав</p>
-                <p>Правовая информация</p>
-              </div>
-              <p>Мы в соцсетях</p>
-              <div>
-                <ul>
-                  <li>
-                    <p>YouTube</p>
-                    <p>Instagram</p>
-                  </li>
-                  <li>
-                    <p>Facebook</p>
-                    <p>ВКонтакте</p>
-                  </li>
-                  <li>
-                    <p>Москва ул. Проспект Вернадского 86В</p>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <p>YaBao Все праав защищены © 2021</p>{" "}
-                <ul>
-                  <li>
-                    <img src={img_1} alt="" />
-                  </li>
-                  <li>
-                    <img src={img_2} alt="" />
-                  </li>
-                  <li>
-                    <img src={img_3} alt="" />
-                  </li>
-                </ul>
+                <div>
+                  <p>Калорийность и состав</p>
+                  <p>Правовая информация</p>
+                </div>
+                <p className={styles.info}>Мы в соцсетях</p>
+                <div>
+                  <ul>
+                    <li>
+                      <p>YouTube</p>
+                      <p>Instagram</p>
+                    </li>
+                    <li>
+                      <p>Facebook</p>
+                      <p>ВКонтакте</p>
+                    </li>
+                    <li>
+                      <p>Москва ул. Проспект Вернадского 86В</p>
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <p>YaBao Все праав защищены © 2021</p>
+                  <ul>
+                    <li>
+                      <img src={img_1} alt="" />
+                    </li>
+                    <li>
+                      <img src={img_2} alt="" />
+                    </li>
+                    <li>
+                      <img src={img_3} alt="" />
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
             <div className={styles.right}>
@@ -61,27 +63,41 @@ export default function Footer() {
                   <li>
                     <img src={messenger_img_1} alt="" />
                   </li>
-                   <li>
+                  <li>
                     <img src={messenger_img_2} alt="" />
                   </li>
-                   <li>
+                  <li>
                     <img src={messenger_img_3} alt="" />
                   </li>
-                   <li>
+                  <li>
                     <img src={messenger_img_4} alt="" />
                   </li>
-                   <li>
+                  <li>
                     <img src={messenger_img_5} alt="" />
                   </li>
-                   <li>
+                  <li>
                     <img src={messenger_img_6} alt="" />
                   </li>
                   <li>написать нам</li>
                 </ul>
-              
               </div>
-             <h3>8 499 391-84-49</h3>
-             <button>Заказать звонок</button>
+              <div>
+                 
+                <h3>8 499 391-84-49</h3>
+                <button>Заказать звонок</button>
+                 <ul>
+                    <li>
+                      <img src={img_1} alt="" />
+                    </li>
+                    <li>
+                      <img src={img_2} alt="" />
+                    </li>
+                    <li>
+                      <img src={img_3} alt="" />
+                    </li>
+                  </ul>
+              </div>
+               <p>YaBao Все праав защищены © 2021</p>
             </div>
           </div>
         </div>

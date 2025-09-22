@@ -9,7 +9,7 @@ interface Product {
 }
 
 interface FoodRenderProps {
-  setBasketFood:React.Dispatch<React.SetStateAction<IBasket[]>>
+  setBasketFood: React.Dispatch<React.SetStateAction<IBasket[]>>;
   foodType: string;
 }
 
@@ -22,18 +22,17 @@ export default function Food_render({
 
   useEffect(() => {
     setIsLoading(false);
+
     food();
   }, [foodType]);
 
   async function food() {
     try {
       const response = await fetch(
-      "https://68caa4c1430c4476c34a541f.mockapi.io/products?food=" + foodType
-   
+        "https://68caa4c1430c4476c34a541f.mockapi.io/products?food=" + foodType
       );
       const products: Product[] = await response.json();
       SetData(products);
-    
     } catch (error) {
       console.error("Fetch error:", error);
     }
@@ -45,20 +44,27 @@ export default function Food_render({
     description: string,
     price: number
   ) {
-    const newItem:IBasket ={image, name, description, price} 
-    setBasketFood(prev=>[...prev, newItem]);
-   
+    const newItem: IBasket = { image, name, description, price };
+    setBasketFood((prev) => [...prev, newItem]);
   }
 
   return (
     <>
       {isLoading
-        ? [...Array(8)].map((_, index) => <Food_Skeleton key={index} />)
+        ? [...Array(data.length)].map((_, index) => (
+            <Food_Skeleton key={index} />
+          ))
         : data.map((option, index) => (
             <li key={index}>
-              <img src={option.image} alt={option.name} />
-              <h3>{option.name}</h3>
-              <p>{option.description}</p>
+              <div>
+                {" "}
+                <img src={option.image} alt={option.name} />
+                <div>
+                  <h3>{option.name}</h3>
+                  <p>{option.description}</p>
+                </div>
+              </div>
+
               <div>
                 <p>от {option.price} ₽</p>{" "}
                 <button

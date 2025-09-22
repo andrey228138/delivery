@@ -22,7 +22,7 @@ export default function Header({
   decQty,
 }: IHeaderProps) {
   const [isActive, setIsActive] = useState(false);
-
+const [menuActive,setMenuActive]=useState(false)
   const toNumber = (v: number | string): number => {
     if (typeof v === "number") return v;
     const cleaned = v
@@ -53,30 +53,11 @@ export default function Header({
                 <div className={styles.logo}>
                   <img src={Logo} alt="Логотип" />
                 </div>
-                <div className={styles.info}>
-                  <p>
-                    Доставка пасты <span>Москва</span>
-                  </p>
-                  <div>
-                    <div>
-                      <img src={Yandex} alt="Яндекс" />
-                      <p>Яндекс еда</p> <div className={styles.circle}></div>
-                      <div className={styles.rating}>
-                        <p>4.8</p>
-                        <img src={Star} alt="Рейтинг" />
-                      </div>
-                    </div>
-                    <div>
-                      <p>Время доставки</p>
-                      <div className={styles.circle}></div>
-                      <p>от 31 мин</p>
-                    </div>
-                  </div>
-                </div>
+               <p>8 499 391-84-49</p>
               </div>
               <div className={styles.right}>
                 <button>Заказать звонок</button>
-                <p>8 499 391-84-49</p>
+               <div className={styles.menu}><span></span></div>
               </div>
             </div>
             <div className={styles.bottom}>

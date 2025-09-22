@@ -9,17 +9,30 @@ interface Product {
 export default function New_food() {
   const [data, SetData] = useState<Product[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [quantity, setQuantity] = useState(width());
+
+  function width() {
+    if (window.innerWidth <= 768) return 1;
+    if (window.innerWidth <= 1080) return 2;
+    return 3;
+  }
+
+
+
+
+
   useEffect(() => {
     food();
   }, []);
 
   async function food() {
     try {
+      setIsLoading(true); // Важно: показываем загрузку при обновлении
       const response = await fetch(
         "https://68caa4c1430c4476c34a541f.mockapi.io/products?new=true"
       );
       const products: Product[] = await response.json();
-      const randomProducts = getRandomProducts(products, 3);
+      const randomProducts = getRandomProducts(products, quantity);
       SetData(randomProducts);
       setTimeout(() => {
         setIsLoading(false);
@@ -31,7 +44,7 @@ export default function New_food() {
   function getRandomProducts(products: Product[], count: number): Product[] {
     if (products.length <= count) return products;
 
-    const shuffled = [...products].sort(() => Math.random() - 0.5);
+    const shuffled = [...products].sort(() => Math.random());
     return shuffled.slice(0, count);
   }
   return (

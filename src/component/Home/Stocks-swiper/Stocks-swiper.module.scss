@@ -6,6 +6,9 @@
     height: 312px;
 
     border-radius: 13px;
+   @media (max-width:1080px) {
+    height: 200px;
+   }
   }
 }
 
@@ -23,6 +26,9 @@
   right: 50%;
   transform: translate(-50%);
   z-index: 2;
+  @media (max-width:1080px) {
+    top: 190px;
+  }
 }
 :global(.swiper-button-prev) {
   transform: rotate(180deg);
