@@ -5,6 +5,7 @@ import New from "../../component/Home/New/New";
 import Food from "../../component/Home/Food/Food";
 import Stocks from "../../component/Home/Stocks/Stocks";
 import Delivery from "../../component/Home/Delivery/Delivery";
+import Basket from "../../component/Home/Basket/Basket";
 import type { IBasket } from "../../types";
 interface HomeProps{
   foodType:string,
@@ -20,7 +21,7 @@ export default function Home({ foodType,setBasketFood }:HomeProps) {
           <Food foodType={foodType} setBasketFood={setBasketFood} />
           <Stocks />
           <Delivery />
-      
+      <Basket/>
       </div>
     </>
   );

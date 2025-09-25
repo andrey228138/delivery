@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import styles from "./Header.module.scss";
 import Logo from "../../img/logo.svg";
-import Yandex from "../../img/yandex.png";
-import Star from "../../img/star.svg";
+
 import Close from "../../img/close.svg";
 import type { IBasket } from "../../types";
 
@@ -21,8 +20,8 @@ export default function Header({
   incQty,
   decQty,
 }: IHeaderProps) {
-  const [isActive, setIsActive] = useState(false);
-const [menuActive,setMenuActive]=useState(false)
+  const [isActiveBasket, setIsActiveBasket] = useState(false);
+  const [menuActive, setMenuActive] = useState(false);
   const toNumber = (v: number | string): number => {
     if (typeof v === "number") return v;
     const cleaned = v
@@ -53,11 +52,34 @@ const [menuActive,setMenuActive]=useState(false)
                 <div className={styles.logo}>
                   <img src={Logo} alt="Логотип" />
                 </div>
-               <p>8 499 391-84-49</p>
+                <p>8 499 391-84-49</p>
               </div>
               <div className={styles.right}>
                 <button>Заказать звонок</button>
-               <div className={styles.menu}><span></span></div>
+                <div>
+                  <div
+                    className={styles.menu}
+                    onClick={() => setMenuActive(!menuActive)}
+                  >
+                    <span></span>
+                  </div>
+                  <div
+                    className={`${styles.content} ${
+                      menuActive ? "" : styles.active
+                    }`}
+                  >
+                    <ul>
+                      <li onClick={() => handleFoodChange("pizza")}>Пицца</li>
+                      <li onClick={() => handleFoodChange("drink")}>Напитки</li>
+                      <li onClick={() => handleFoodChange("dessert")}>
+                        Десерты
+                      </li>
+                      <li>Акции</li>
+                      <li onClick={() => handleFoodChange("combo")}>Комбо</li>
+                      <li>Контакты</li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
             <div className={styles.bottom}>
@@ -73,13 +95,13 @@ const [menuActive,setMenuActive]=useState(false)
               <div className={styles.right}>
                 <p className={styles.sign_up}>Войти</p>
                 <div className={styles.popUp}>
-                  <button onClick={() => setIsActive(!isActive)}>
+                  <button onClick={() => setIsActiveBasket(!isActiveBasket)}>
                     <p>Корзина</p> <p>{basketFood.length}</p>
                   </button>
 
                   <div
                     className={`${styles.content} ${
-                      isActive ? ""  : styles.active
+                      isActiveBasket ? "" : styles.active
                     }`}
                   >
                     <ul>
